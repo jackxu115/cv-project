@@ -12,7 +12,6 @@ class EducationAdd extends Component {
             addBtnClicked: true,
             schools: []
         }
-
     }
 
     addSchool = event => {
@@ -40,7 +39,10 @@ class EducationAdd extends Component {
     render() {
         return (
             <div>
-                <SchoolList schools={this.state.schools}/>
+                <SchoolList
+                    schools={this.state.schools}
+                    parentCbSchools={this.handleCbSchools}
+                />
                 {
                     this.state.addBtnClicked ?
                         <button onClick={this.addSchool}>Add</button>
@@ -51,6 +53,7 @@ class EducationAdd extends Component {
                     parentCbClicked={this.handleCbClicked}
                     parentCbSchools={this.handleCbSchools}
                     schoolDisplay={this.state.schoolDisplay}
+                    schools = {this.state.schools}
                 />
             </div>
         )

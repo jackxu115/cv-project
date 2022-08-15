@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { v4 as uuid } from "uuid";
 
-
 class School extends Component {
     constructor(props) {
         super(props);
@@ -12,9 +11,14 @@ class School extends Component {
                 dateStudy: '',
                 id: uuid()
             },
-            schools: [],
+            schools: []
         }
     }
+    // componentDidMount() {
+    //     this.setState({
+    //         schools: this.props.schools
+    //     })
+    // }
 
     changeSchoolName = event => {
         this.setState({school: {...this.state.school, schoolName: event.target.value}})
@@ -30,15 +34,31 @@ class School extends Component {
 
     onSubmitSchool = event => {
         this.props.parentCbClicked()
-        this.setState(prevState => ({
-            schools: [...prevState.schools, this.state.school],
-            school: {
-                schoolName: '',
-                titleStudy: '',
-                dateStudy: '',
-                id: uuid()
-            }
-        }), () => this.props.parentCbSchools(this.state.schools))
+        console.log(this.props.schools)
+
+        this.setState({
+            schools: this.props.schools
+        }, () => {
+            this.setState(prevState => ({
+                schools: [...prevState.schools, this.state.school],
+                school: {
+                    schoolName: '',
+                    titleStudy: '',
+                    dateStudy: '',
+                    id: uuid()
+                }
+            }), () => this.props.parentCbSchools(this.state.schools))
+        })
+
+        // this.setState(prevState => ({
+        //     schools: [...prevState.schools, this.state.school],
+        //     school: {
+        //         schoolName: '',
+        //         titleStudy: '',
+        //         dateStudy: '',
+        //         id: uuid()
+        //     }
+        // }), () => this.props.parentCbSchools(this.state.schools))
 
         event.preventDefault()
     }

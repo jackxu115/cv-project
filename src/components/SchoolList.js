@@ -15,12 +15,12 @@ class SchoolList extends Component {
         this.setState({schools: schools.filter(school => school.id !== deleteId)},
             () => {
                 console.log('schoolList after', this.state.schools)
-        })
+                this.props.parentCbSchools(this.state.schools)
+            })
     }
 
     render() {
         const schools = this.props.schools
-        console.log(this.context.value)
         return (
             <div>
                 {schools.map((school) => {
