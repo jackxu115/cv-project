@@ -2,12 +2,10 @@ import React, {Component} from "react";
 import School from "./School";
 import SchoolList from "./SchoolList";
 
-
 class EducationAdd extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            displayMethod: this.props.displayMethod,
             schoolDisplay: false,
             addBtnClicked: true,
             schools: []
@@ -45,7 +43,7 @@ class EducationAdd extends Component {
                 />
                 {
                     this.state.addBtnClicked ?
-                        <button onClick={this.addSchool}>Add</button>
+                        <button className="schoolAdd_btn" onClick={this.addSchool}>Add</button>
                         :
                         <div></div>
                 }

@@ -10,6 +10,7 @@ class GeneralInfo extends Component {
                 <EditGeneralInfo inputText="Last Name" buttonText="Edit" displayMethod="0" />
                 <EditGeneralInfo inputText="Email Address" buttonText="Edit" displayMethod="0" />
                 <EditGeneralInfo inputText="Phone Number" buttonText="Edit" displayMethod="0" />
+                <hr/>
             </div>
         )
     }

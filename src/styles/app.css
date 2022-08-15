@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 100px auto;
+    border: 2px solid #f0f5f9;
+    background: #2d4059;
+}
+
+.header {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 20px 0 0;
+    padding: 0;
+    font-size: 50px;
+}
+
+.header_btn {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all ease 0.3s;
+    background: #f0f5f9;
+    color: #1e2022;
+    margin-top: 10px;
+}
+
+.header_btn:hover {
+    transition: all ease 0.3s;
+    background: #c9d6df;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.general_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 20px -50px ;
+    justify-content: space-between;
+}
+
+
+.general_label, .schoolForm_label, .schoolDisplay_label, .schoolDisplay_text,
+.experienceForm_label, .experienceDisplay_label, .experienceDisplay_text {
+    font-size: 15px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.schoolAdd_btn, .experienceAdd_btn {
+    margin: 30px 0;
+}
+
+.general_btn, .schoolAdd_btn, .schoolSubmit_btn, .schoolDelete_btn,
+.experienceAdd_btn, .experienceSubmit_btn, .experienceDelete_btn {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+    background: #f0f5f9;
+    color: #1e2022;
+}
+
+.general_btn:hover, .schoolAdd_btn:hover, .schoolSubmit_btn:hover, .schoolDelete_btn:hover,
+.experienceAdd_btn:hover, .experienceSubmit_btn:hover, .experienceDelete_btn:hover {
+    transition: all ease 0.3s;
+    background: #a1eafb;
+    cursor: pointer;
+}
+
+.general_input, .schoolForm_input, .experienceForm_input {
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.schoolForm_item, .schoolDisplay_item, .experienceForm_item, .experienceDisplay_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 20px -50px ;
+    justify-content: space-between;
+}
+
+.schoolForm_item.submit, .schoolDisplay_item.delete {
+    justify-content: center;
+}
+
+hr {
+    width: 160%;
+    margin-left: -30%;
+}
+
+

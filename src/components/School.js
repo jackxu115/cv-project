@@ -14,11 +14,6 @@ class School extends Component {
             schools: []
         }
     }
-    // componentDidMount() {
-    //     this.setState({
-    //         schools: this.props.schools
-    //     })
-    // }
 
     changeSchoolName = event => {
         this.setState({school: {...this.state.school, schoolName: event.target.value}})
@@ -49,38 +44,29 @@ class School extends Component {
                 }
             }), () => this.props.parentCbSchools(this.state.schools))
         })
-
-        // this.setState(prevState => ({
-        //     schools: [...prevState.schools, this.state.school],
-        //     school: {
-        //         schoolName: '',
-        //         titleStudy: '',
-        //         dateStudy: '',
-        //         id: uuid()
-        //     }
-        // }), () => this.props.parentCbSchools(this.state.schools))
-
         event.preventDefault()
     }
 
     render() {
         if (this.props.schoolDisplay) {
             return (
-                <div>
+                <div className="schoolForm">
                     <form onSubmit={this.onSubmitSchool}>
-                        <div>
-                            <label>School Name</label>
-                            <input onChange={this.changeSchoolName} type="text"/>
+                        <div className="schoolForm_item">
+                            <label className="schoolForm_label">School Name</label>
+                            <input className="schoolForm_input" onChange={this.changeSchoolName} type="text"/>
                         </div>
-                        <div>
-                            <label>Title of Study</label>
-                            <input onChange={this.changeTitleStudy} type="text"/>
+                        <div className="schoolForm_item">
+                            <label className="schoolForm_label">Title of Study</label>
+                            <input className="schoolForm_input" onChange={this.changeTitleStudy} type="text"/>
                         </div>
-                        <div>
-                            <label>Date of study</label>
-                            <input onChange={this.changeDateStudy} type="date"/>
+                        <div className="schoolForm_item">
+                            <label className="schoolForm_label">Date of study</label>
+                            <input className="schoolForm_input" onChange={this.changeDateStudy} type="date"/>
                         </div>
-                        <button type="submit">Submit</button>
+                        <div className="schoolForm_item submit">
+                            <button className="schoolSubmit_btn" type="submit">Submit</button>
+                        </div>
                     </form>
                 </div>
             )

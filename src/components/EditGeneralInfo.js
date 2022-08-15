@@ -6,8 +6,7 @@ class EditGeneralInfo extends Component {
 
         this.state = {
             inputText: this.props.inputText,
-            buttonText: this.props.buttonText,
-            displayMethod: this.props.displayMethod
+            buttonText: this.props.buttonText
         }
     }
 
@@ -18,13 +17,6 @@ class EditGeneralInfo extends Component {
         })
     }
 
-    onClickDisplay = event => {
-        event.preventDefault()
-        this.setState({
-            displayMethod: "0"
-        })
-    }
-
     handleChange = event => {
         this.setState({
             inputText: event.target.value
@@ -32,22 +24,12 @@ class EditGeneralInfo extends Component {
     }
 
     render() {
-
-        if (this.state.displayMethod === "0") {
-            return (
-                <div>
-                    <label>{this.state.inputText}</label>
-                    <button onClick={this.onClickEdit}>{this.state.buttonText}</button>
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    <input placeholder={this.state.inputText} onChange={this.handleChange} type="text"/>
-                    <button onClick={this.onClickDisplay}>Save</button>
-                </div>
-            )
-        }
+        return (
+            <div className="general_info">
+                <label className="general_label">{this.state.inputText}</label>
+                <button className="general_btn" onClick={this.onClickEdit}>{this.state.buttonText}</button>
+            </div>
+        )
     }
 }
 
